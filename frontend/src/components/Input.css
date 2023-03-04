@@ -1,0 +1,31 @@
+.input-div{
+    width: 300px;
+    margin: auto;
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.input-label{
+    font-size: 22px;
+    text-align: center;
+}
+.form{
+    display: block;
+}
+.input{
+    margin-top: 20px;
+    font-size: 22px;
+    padding: 4px;
+    box-shadow: 5px 5px;
+}
+
+.input-button{
+    margin-top: 20px;
+    font-size: 22px;
+    padding: 4px 10px;
+    box-shadow: 3px 3px;
+    cursor: pointer;
+}

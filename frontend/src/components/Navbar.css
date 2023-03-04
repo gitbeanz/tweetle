@@ -5,4 +5,14 @@
 
 .navbar-div{
     width: 100%;
+    display: block;
+    border: 1px solid #D3D6DA;
 }
+
+@media screen and (min-width: 765px) {
+    .navbar-title{
+        font-size: 36px;
+        text-align: center;
+    }
+    
+  }
