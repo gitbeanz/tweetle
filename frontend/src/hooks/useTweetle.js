@@ -12,8 +12,15 @@ const useTweetle = (solution) => {
   const addNewGuess = () => {};
 
   const handleKeyup = ({ key }) => {
+    if (key == "Backspace") {
+      setCurrentGuess((previousWord) => {
+        return previousWord.slice(0, -1);
+      });
+      return;
+    }
+
     if (/^[A-Za-z]$/.test(key)) {
-      if (currentGuess < 5) {
+      if (currentGuess.length < 5) {
         setCurrentGuess((previousLetter) => {
           return (previousLetter += key);
         });

@@ -69,7 +69,7 @@ function App() {
       {!loadGame && (
         <Input setUsername={setUsername} loadUserTweets={loadUserTweets} />
       )}
-      {tweetleData && (
+      {loadGame && tweetleData && (
         <Tweetle word={tweetleData.word} data={tweetleData.data} />
       )}
     </div>

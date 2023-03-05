@@ -12,9 +12,10 @@ export default function Tweetle(props) {
   }, [handleKeyup]);
 
   console.log(props.data);
-  return(
-
-   <div className="tweetle-div">Solution is: {props.word}</div>
-   <div>current guess - {currentGuess}</div>
-  )
+  return (
+    <div className="tweetle-div">
+      Solution is: {props.word}
+      <div>current guess - {currentGuess}</div>
+    </div>
+  );
 }
