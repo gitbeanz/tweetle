@@ -32,7 +32,7 @@ function App() {
       var chosenWord = false;
       var chosenWordArray = [];
       words.forEach((word) => {
-        if (word.length == 5 && word.match(/^[A-Za-z]+$/)) {
+        if (word.length == 5 && word.match(/^[A-Za-z]+$/) && isUnique(word)) {
           chosenWord = true;
           chosenWordArray.push(word.toLowerCase());
         }
@@ -43,8 +43,24 @@ function App() {
         });
       }
     });
+    console.log(tweetOptions);
     const randomIndex = Math.floor(Math.random() * tweetOptions.length);
     setTweetleData(tweetOptions[randomIndex]);
+  }
+
+  function isUnique(word) {
+    var unique = [];
+    for (let i = 0; i < word.length; i++) {
+      if (unique.includes(word.charAt(i)) === false) {
+        unique.push(word.charAt(i));
+        console.log(unique);
+      }
+    }
+    if (unique.length === 5) {
+      return true;
+    } else {
+      return false;
+    }
   }
   return (
     <div className="App">
