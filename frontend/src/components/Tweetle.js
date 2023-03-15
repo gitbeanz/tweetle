@@ -1,9 +1,12 @@
 import React, { useEffect } from "react";
 import useTweetle from "../hooks/useTweetle";
+import TweetleGrid from "./TweetleGrid";
 import "./Tweetle.css";
 
 export default function Tweetle(props) {
-  const { currentGuess, handleKeyup } = useTweetle(props.word);
+  const { currentGuess, handleKeyup, guesses, isCorrect, turn } = useTweetle(
+    props.word
+  );
 
   useEffect(() => {
     window.addEventListener("keyup", handleKeyup);
@@ -11,11 +14,15 @@ export default function Tweetle(props) {
     return () => window.removeEventListener("keyup", handleKeyup);
   }, [handleKeyup]);
 
-  console.log(props.data);
+  useEffect(() => {
+    console.log(guesses, turn, isCorrect);
+  }, [guesses, turn, isCorrect]);
+
   return (
     <div className="tweetle-div">
       Solution is: {props.word}
       <div>current guess - {currentGuess}</div>
+      <TweetleGrid currentGuess={currentGuess} guesses={guesses} turn={turn} />
     </div>
   );
 }
