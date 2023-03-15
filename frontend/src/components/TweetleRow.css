@@ -1,10 +1,10 @@
-.tweetle-row{
+.row{
     text-align: center;
     display: flex;
     justify-content: center;
 }
 
-.tweetle-row > div{
+.row > div{
     display: block;
     width: 60px;
     height: 60px;
@@ -15,4 +15,19 @@
     text-transform: uppercase;
     font-weight: bold;
     font-size: 2.5em;
+}
+
+.row > .green {
+    background: #5ac85a;
+    border-color: #5ac85a;
+}
+
+.row > .grey{
+    background: #a1a1a1;
+    border-color: #a1a1a1;
+}
+
+.row > .yellow{
+    background: #e2cc68;
+    border-color: #e2cc68;
 }

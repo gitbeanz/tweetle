@@ -22,7 +22,7 @@ export default function Tweetle(props) {
     <div className="tweetle-div">
       Solution is: {props.word}
       <div>current guess - {currentGuess}</div>
-      <TweetleGrid currentGuess={currentGuess} guesses={guesses} turn={turn} />
+      <TweetleGrid guesses={guesses} currentGuess={currentGuess} turn={turn} />
     </div>
   );
 }
