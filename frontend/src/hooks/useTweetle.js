@@ -6,6 +6,7 @@ const useTweetle = (solution) => {
   const [guesses, setGuesses] = useState([...Array(6)]);
   const [history, setHistory] = useState([]);
   const [isCorrect, setIsCorrect] = useState(false);
+  const [usedKeys, setUsedKeys] = useState({}); //key = letter, value = color
 
   // format a guess into solution map with letter and color data, then return
   const formatGuess = () => {
@@ -45,6 +46,30 @@ const useTweetle = (solution) => {
     setTurn((previousTurn) => {
       return previousTurn + 1;
     });
+    setUsedKeys((previousKeys) => {
+      let newKeys = { ...previousKeys };
+      guessData.forEach((letter) => {
+        console.log(letter.color);
+        const color = newKeys[letter.key];
+        if (letter.color === "green") {
+          newKeys[letter.key] = "green";
+          return;
+        }
+        if (letter.color === "yellow" && color !== "green") {
+          newKeys[letter.key] = "yellow";
+          return;
+        }
+        if (
+          letter.color === "grey" &&
+          color !== "green" &&
+          color !== "yellow"
+        ) {
+          newKeys[letter.key] = "grey";
+          return;
+        }
+      });
+      return newKeys;
+    });
     setCurrentGuess("");
   };
 
@@ -52,7 +77,7 @@ const useTweetle = (solution) => {
   const handleKeyup = ({ key }) => {
     if (key === "Enter") {
       if (
-        turn < 5 &&
+        turn <= 5 &&
         !history.includes(currentGuess) &&
         currentGuess.length === 5
       ) {
@@ -78,7 +103,7 @@ const useTweetle = (solution) => {
     }
   };
 
-  return { turn, currentGuess, guesses, isCorrect, handleKeyup };
+  return { turn, currentGuess, guesses, isCorrect, usedKeys, handleKeyup };
 };
 
 export default useTweetle;

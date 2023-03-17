@@ -3,7 +3,6 @@ import "./TweetleRow.css";
 
 export default function TweetleRow(props) {
   if (props.guess) {
-    console.log("TRUE");
     return (
       <div className="row past">
         {props.guess.map((letter, index) => (

@@ -7,6 +7,7 @@
     width: 100%;
     display: block;
     border: 1px solid #D3D6DA;
+    margin-bottom: 30px;
 }
 
 @media screen and (min-width: 765px) {
