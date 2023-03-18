@@ -70,7 +70,11 @@ function App() {
         <Input setUsername={setUsername} loadUserTweets={loadUserTweets} />
       )}
       {loadGame && tweetleData && (
-        <Tweetle word={tweetleData.word} data={tweetleData.data} />
+        <Tweetle
+          word={tweetleData.word}
+          data={tweetleData.data}
+          user={username}
+        />
       )}
     </div>
   );
