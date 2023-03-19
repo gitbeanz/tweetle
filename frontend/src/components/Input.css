@@ -1,3 +1,7 @@
+
+
+
+
 .input-div{
     width: 300px;
     margin: auto;
@@ -6,6 +10,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+
 }
 
 .input-label{
@@ -18,15 +23,54 @@
 .input{
     margin-top: 20px;
     font-size: 22px;
-    padding: 4px;
-    box-shadow: 5px 5px;
+    padding: 10px 30px;
+    border-radius: 25px;
+    background-color: #EFF3F4;
     text-align: center;
+    border: 1px solid #EFF3F4;
+    
+}
+
+.input:focus{
+    background-color: #FFFFFF;
+    outline: 1px solid #1D9BF0;
+    
+}
+
+.input:focus::placeholder{
+    color: #1D9BF0;
+}
+
+
+::placeholder{
+    color: #536471;
 }
 
 .input-button{
-    margin-top: 20px;
+    margin-top: 30px;
     font-size: 22px;
-    padding: 4px 10px;
-    box-shadow: 3px 3px;
+    padding: 15px 90px;
+    border-radius: 40px;
+    border: 0px;
     cursor: pointer;
+    background-color: #1D9BF0;
+    color: #FFFFFF;
+    transition: background-color 0.2s ease-out;
+
+    
+}
+
+.input-button:hover{
+    background-color: #177CC0;
+    transition: background-color 0.1 ease-in;
+}
+
+.glass{
+    position: relative;
+    top: 53px;
+    right: 125px;
+    color: #536471;
+}
+.input-glass:focus-within > .glass{
+    color: #1D9BF0;
 }

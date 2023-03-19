@@ -8,6 +8,7 @@
     display: block;
     border: 1px solid #D3D6DA;
     margin-bottom: 30px;
+    color: #1D9BF0
 }
 
 @media screen and (min-width: 765px) {

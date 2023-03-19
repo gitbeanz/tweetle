@@ -15,19 +15,22 @@
 }
 
 div .green{
-    background: #5ac85a;
+    background: #1DA1F2;
     color: #fff;
-    transition: all 0.3s ease-in;
+    transition: all 0.2s ease-in;
+    transition-delay: 1s;
 }
 
 div .yellow{
-    background: #e2cc68;
+    background: #657786;
     color: #fff;
-    transition: all 0.3s ease-in;
+    transition: all 0.2s ease-in;
+    transition-delay: 1s;
 }
 
 div .grey{
-    background: #a1a1a1;
+    background: #AAB8C2;
     color: #fff;
-    transition: all 0.3s ease-in;
+    transition: all 0.2s ease-in;
+    transition-delay: 1s;
 }

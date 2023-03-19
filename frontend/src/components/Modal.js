@@ -31,8 +31,8 @@ export default function Modal(props) {
           <p className="tweet">
             @{props.user} : "{props.data.text}"
           </p>
-          <p>run it back, you got this 😼</p>
-          <p className="refresh">refresh to play again</p>
+          <p>Run it back, you got this 😼</p>
+          <p className="refresh">Refresh to play again</p>
         </div>
       )}
     </div>

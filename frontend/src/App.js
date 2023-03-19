@@ -3,7 +3,6 @@ import Navbar from "./components/Navbar";
 import Input from "./components/Input";
 import { useState, useEffect } from "react";
 import Axios from "axios";
-import Twitter from "./twitter.svg";
 import Tweetle from "./components/Tweetle";
 
 function App() {
