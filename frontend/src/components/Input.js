@@ -4,7 +4,6 @@ import "./Input.css";
 export default function Input(props) {
   function handleClick() {
     props.setUsername(document.getElementById("input_id").value);
-    props.loadUserTweets();
   }
   function handleSubmit(e) {
     e.preventDefault();

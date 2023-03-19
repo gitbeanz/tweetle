@@ -1,7 +1,7 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Input from "./components/Input";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Axios from "axios";
 import Twitter from "./twitter.svg";
 import Tweetle from "./components/Tweetle";
@@ -10,7 +10,8 @@ function App() {
   const [username, setUsername] = useState("");
   const [loadGame, setLoadGame] = useState(false);
   const [tweetleData, setTweetleData] = useState({});
-  function loadUserTweets() {
+
+  useEffect(() => {
     Axios.get("http://localhost:3001/api/tweets/" + username).then(
       (response) => {
         if (response.status === 500) {
@@ -24,7 +25,8 @@ function App() {
         }
       }
     );
-  }
+  }, [username]);
+
   function pickTweetle(data) {
     var tweetOptions = [];
     data.map((tweetData) => {
@@ -66,9 +68,7 @@ function App() {
     <div className="App">
       <Navbar />
 
-      {!loadGame && (
-        <Input setUsername={setUsername} loadUserTweets={loadUserTweets} />
-      )}
+      {!loadGame && <Input setUsername={setUsername} />}
       {loadGame && tweetleData && (
         <Tweetle
           word={tweetleData.word}
