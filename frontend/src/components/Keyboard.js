@@ -11,40 +11,75 @@ export default function Keyboard(props) {
   console.log(props.usedKeys);
   return (
     <div className="keyboard">
-      <div className="first-row">
-        {first_row_letters.map((letter) => {
-          return (
-            <button id="key" className={props.usedKeys[letter]} key={letter}>
-              {letter}
-            </button>
-          );
-        })}
-      </div>
-      <div className="second-row">
-        {second_row_letters.map((letter) => {
-          return (
-            <button id="key" className={props.usedKeys[letter]} key={letter}>
-              {letter}
-            </button>
-          );
-        })}
-      </div>
-      <div className="third-row">
-        <button className="big-button" key="Enter">
-          ENTER
-        </button>
+      <form onSubmit={(e) => e.preventDefault()}>
+        <div className="first-row">
+          {first_row_letters.map((letter) => {
+            return (
+              <button
+                onClick={() => {
+                  props.handleKeypress(letter);
+                }}
+                id="key"
+                className={props.usedKeys[letter]}
+                key={letter}
+              >
+                {letter}
+              </button>
+            );
+          })}
+        </div>
+        <div className="second-row">
+          {second_row_letters.map((letter) => {
+            return (
+              <button
+                id="key"
+                onClick={() => {
+                  props.handleKeypress(letter);
+                }}
+                className={props.usedKeys[letter]}
+                key={letter}
+              >
+                {letter}
+              </button>
+            );
+          })}
+        </div>
+        <div className="third-row">
+          <button
+            className="big-button"
+            onClick={() => {
+              props.handleKeypress("ENTER");
+            }}
+            key="Enter"
+          >
+            ENTER
+          </button>
 
-        {third_row_letters.map((letter) => {
-          return (
-            <button id="key" className={props.usedKeys[letter]} key={letter}>
-              {letter}
-            </button>
-          );
-        })}
-        <button className="big-button" key="Del">
-          <FontAwesomeIcon className="font-icon" icon={faBackspace} />
-        </button>
-      </div>
+          {third_row_letters.map((letter) => {
+            return (
+              <button
+                id="key"
+                onClick={() => {
+                  props.handleKeypress(letter);
+                }}
+                className={props.usedKeys[letter]}
+                key={letter}
+              >
+                {letter}
+              </button>
+            );
+          })}
+          <button
+            onClick={() => {
+              props.handleKeypress("Backspace");
+            }}
+            className="big-button"
+            key="Del"
+          >
+            <FontAwesomeIcon className="font-icon" icon={faBackspace} />
+          </button>
+        </div>
+      </form>
     </div>
   );
 }

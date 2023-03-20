@@ -103,7 +103,41 @@ const useTweetle = (solution) => {
     }
   };
 
-  return { turn, currentGuess, guesses, isCorrect, usedKeys, handleKeyup };
+  const handleKeypress = (letter) => {
+    if (letter === "ENTER") {
+      if (
+        turn <= 5 &&
+        !history.includes(currentGuess) &&
+        currentGuess.length === 5
+      ) {
+        const formatted = formatGuess();
+        addNewGuess(formatted);
+      } else {
+        return;
+      }
+    }
+    if (letter == "Backspace") {
+      setCurrentGuess((previousWord) => {
+        return previousWord.slice(0, -1);
+      });
+      return;
+    }
+    if (currentGuess.length < 5) {
+      setCurrentGuess((previousLetter) => {
+        return (previousLetter += letter);
+      });
+    }
+  };
+
+  return {
+    handleKeypress,
+    turn,
+    currentGuess,
+    guesses,
+    isCorrect,
+    usedKeys,
+    handleKeyup,
+  };
 };
 
 export default useTweetle;

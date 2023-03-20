@@ -6,8 +6,15 @@ import "./Tweetle.css";
 import Modal from "./Modal";
 
 export default function Tweetle(props) {
-  const { currentGuess, handleKeyup, guesses, usedKeys, isCorrect, turn } =
-    useTweetle(props.word);
+  const {
+    handleKeypress,
+    currentGuess,
+    handleKeyup,
+    guesses,
+    usedKeys,
+    isCorrect,
+    turn,
+  } = useTweetle(props.word);
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
@@ -36,7 +43,7 @@ export default function Tweetle(props) {
   return (
     <div className="tweetle-div">
       <TweetleGrid guesses={guesses} currentGuess={currentGuess} turn={turn} />
-      <Keyboard usedKeys={usedKeys} />
+      <Keyboard usedKeys={usedKeys} handleKeypress={handleKeypress} />
       {showModal && (
         <Modal
           isCorrect={isCorrect}
