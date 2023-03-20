@@ -13,14 +13,21 @@ function App() {
   useEffect(() => {
     Axios.get("http://localhost:3001/api/tweets/" + username).then(
       (response) => {
+        console.log(response.status);
+        if (response.status === 400) {
+          window.alert("Oops! Error 404 not found. Try a different user");
+        }
         if (response.status === 500) {
           window.alert("Oops! Twitter user not found. Try again");
         }
         if (response.status === 200) {
-          pickTweetle(response.data);
-          setLoadGame(true);
-        }
-        if (response.status === 400) {
+          if (pickTweetle(response.data)) {
+            setLoadGame(true);
+          } else {
+            window.alert(
+              "Oops! Could not make a Tweetle out of user's recent tweets. Try a different user"
+            );
+          }
         }
       }
     );
@@ -46,7 +53,9 @@ function App() {
     });
     console.log(tweetOptions);
     const randomIndex = Math.floor(Math.random() * tweetOptions.length);
-    setTweetleData(tweetOptions[randomIndex]);
+    let chosenData = tweetOptions[randomIndex];
+    setTweetleData(chosenData);
+    return chosenData;
   }
 
   function isUnique(word) {
