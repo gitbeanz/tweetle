@@ -1,9 +1,10 @@
 .keyboard {
-    max-width: 500px;
+    max-width: 600px;
     margin: 20px auto;
+    
 }
 
-.keyboard > div {
+#key {
     margin: 5px;
     width: 40px;
     height: 50px;
@@ -12,25 +13,110 @@
     border-radius: 6px;
     line-height: 50px;
     text-transform: uppercase;
+    font-size: 20px;
+    border: 0px;
+    cursor: pointer;
 }
 
-div .green{
+#key:active{
+    outline: none;
+}
+
+#key + .green{
     background: #1DA1F2;
     color: #fff;
     transition: all 0.2s ease-in;
     transition-delay: 1s;
 }
 
-div .yellow{
+#key + .yellow{
     background: #657786;
     color: #fff;
     transition: all 0.2s ease-in;
     transition-delay: 1s;
 }
 
-div .grey{
+#key + .grey{
     background: #AAB8C2;
     color: #fff;
     transition: all 0.2s ease-in;
     transition-delay: 1s;
 }
+.big-button{
+    margin: 5px;
+    width: 60px;
+    height: 50px;
+    background: #eee;
+    display: inline-block;
+    border-radius: 6px;
+    line-height: 50px;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bolder;
+    border: 0px;
+    cursor: pointer;
+    text-transform: none;
+}
+
+.font-icon{
+    font-size: 20px;
+    position: relative;
+    top: 2px;
+}
+
+@media screen and (max-width: 512px) {
+    #key{
+        width: 30px;
+        height: 40px;
+        line-height: 40px;
+    }
+    .big-button{
+        width: 50px;
+        height: 40px;
+        line-height: 40px;
+    }
+  }
+
+  @media screen and (max-width: 413px) {
+    #key{
+        width: 25px;
+        height: 35px;
+        font-size: 16px;
+        line-height: 35px;
+    }
+    .big-button{
+        width: 45px;
+        height: 35px;
+        font-size: 9px;
+        line-height: 35px;
+    }
+    .font-icon{
+        font-size: 16px;
+        position: relative;
+        top: 2px;
+    }
+
+  }
+
+  
+  @media screen and (max-width: 354px) {
+    #key{
+        width: 21px;
+        height: 30px;
+        font-size: 9px;
+        line-height: 31px;
+        text-align: center;
+    }
+    .big-button{
+        width: 40px;
+        height: 30px;
+        font-size: 9px;
+        line-height: 30px;
+    }
+    .font-icon{
+        font-size: 16px;
+        position: relative;
+        top: 2px;
+    }
+
+  }
