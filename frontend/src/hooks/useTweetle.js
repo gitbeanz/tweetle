@@ -95,7 +95,7 @@ const useTweetle = (solution) => {
     }
 
     if (/^[A-Za-z]$/.test(key)) {
-      if (currentGuess.length < 5) {
+      if (currentGuess.length < 5 && !currentGuess.includes(key)) {
         setCurrentGuess((previousLetter) => {
           return (previousLetter += key);
         });
@@ -122,7 +122,7 @@ const useTweetle = (solution) => {
       });
       return;
     }
-    if (currentGuess.length < 5) {
+    if (currentGuess.length < 5 && !currentGuess.includes(letter)) {
       setCurrentGuess((previousLetter) => {
         return (previousLetter += letter);
       });

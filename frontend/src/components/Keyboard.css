@@ -16,6 +16,9 @@
     font-size: 20px;
     border: 0px;
     cursor: pointer;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+     user-select: none;
 }
 
 #key:active{
