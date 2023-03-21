@@ -4,7 +4,7 @@
     
 }
 
-#key {
+#key,#key-three {
     margin: 5px;
     width: 40px;
     height: 50px;
@@ -13,6 +13,7 @@
     border-radius: 6px;
     line-height: 50px;
     text-transform: uppercase;
+    outline: none;
     font-size: 20px;
     border: 0px;
     cursor: pointer;
@@ -21,25 +22,25 @@
      user-select: none;
 }
 
-#key:active{
+#key:active,#key-three:active{
     outline: none;
 }
 
-#key + .green{
+#key + .green,#key-three + .green{
     background: #1DA1F2;
     color: #fff;
     transition: all 0.2s ease-in;
     transition-delay: 1s;
 }
 
-#key + .yellow{
+#key + .yellow,#key-three + .yellow{
     background: #657786;
     color: #fff;
     transition: all 0.2s ease-in;
     transition-delay: 1s;
 }
 
-#key + .grey{
+#key + .grey,#key-three + .grey{
     background: #AAB8C2;
     color: #fff;
     transition: all 0.2s ease-in;
@@ -60,6 +61,16 @@
     cursor: pointer;
     text-transform: none;
 }
+
+
+#key:first-child{
+    display: none;
+}
+
+#key-three:nth-child(2){
+    display: none;
+}
+
 
 .font-icon{
     font-size: 20px;

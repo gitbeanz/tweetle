@@ -6,7 +6,7 @@ const useTweetle = (solution) => {
   const [guesses, setGuesses] = useState([...Array(6)]);
   const [history, setHistory] = useState([]);
   const [isCorrect, setIsCorrect] = useState(false);
-  const [usedKeys, setUsedKeys] = useState({}); //key = letter, value = color
+  const [usedKeys, setUsedKeys] = useState({ "": "blank" }); //key = letter, value = color
 
   // format a guess into solution map with letter and color data, then return
   const formatGuess = () => {
